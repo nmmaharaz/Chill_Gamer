@@ -10,6 +10,7 @@ import MyReviews from "../page/MyReviews";
 import UpdateReview from "../page/UpdateReview";
 import MyWishlist from "../page/MyWishlist";
 import ForgetPassword from "../page/ForgetPassword";
+import PrivateRoute from "../components/PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -38,16 +39,16 @@ const router = createBrowserRouter([
         },
         {
           path:"/addReview",
-          element:<AddReview></AddReview>
+          element:<PrivateRoute><AddReview></AddReview></PrivateRoute>
         },
         {
           path:"/review/:id",
-          element: <ReviewDetails></ReviewDetails>,
+          element: <PrivateRoute><ReviewDetails></ReviewDetails></PrivateRoute>,
           loader: ({params})=>fetch(`http://localhost:5000/review/${params.id}`)
         },
         {
           path:"/myReviews",
-          element:<MyReviews></MyReviews>
+          element:<PrivateRoute><MyReviews></MyReviews></PrivateRoute>
         },
         {
           path:"/updateReview/:id",
@@ -56,7 +57,7 @@ const router = createBrowserRouter([
         },
         {
           path:"/myWatchlist",
-          element:<MyWishlist></MyWishlist>
+          element:<PrivateRoute><MyWishlist></MyWishlist></PrivateRoute>
         },
         {
           path:"/forgetpassword",

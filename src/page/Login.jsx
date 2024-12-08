@@ -4,13 +4,15 @@ import google from "../assets/google.png";
 import { AuthContext } from "../authprovider/AuthProvider";
 import {GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import auth from "../components/firebase_int";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Swal from "sweetalert2";
 const Login = () => {
   const {setForgetEmail
   } = useContext(AuthContext)
   const [showPassword, setShowPassword] = useState(false);
+  const { state } = useLocation();
+  console.log(state)
   const emailRef = useRef()
   const navigate = useNavigate();
   const {SignIn} = useContext(AuthContext)
@@ -21,7 +23,7 @@ const Login = () => {
     console.log(email, password);
     SignIn(email, password)
       .then((result) => {
-        console.log("Hellow Dost Ki Obostha?");
+        navigate(state ? state : "/");
       })
       .catch((error) => {
         Swal.fire({
@@ -37,7 +39,7 @@ const Login = () => {
   const handleGoogle = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
-       console.log(result);
+        navigate(state ? state : "/");
       })
       .catch((error) => {
         console.log(error)

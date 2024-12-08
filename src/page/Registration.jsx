@@ -2,10 +2,12 @@ import { useContext, useState } from "react";
 import logo from "../assets/ChillGame.png";
 import { AuthContext } from "../authprovider/AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 const Registration = () => {
   const {SignUp, setUser, UpdateProfile} = useContext(AuthContext)
   const [errormassage, setErrorMassage] = useState("");
   const [showPassword, setShowPassword] = useState(false)
+  const navigate = useNavigate()
   const handleSignUp = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
@@ -36,6 +38,7 @@ const Registration = () => {
       const user = result.user
       setUser(user)
       UpdateProfile({displayName:name, photoURL:photourl})
+      navigate("/");
     })
     .catch((error)=>{
       console.log("mama eto error khaccho keno?")
