@@ -7,6 +7,7 @@ import auth from "../components/firebase_int";
 import { useLocation, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Swal from "sweetalert2";
+import { toast } from "react-toastify";
 const Login = () => {
   const {setForgetEmail
   } = useContext(AuthContext)
@@ -23,6 +24,9 @@ const Login = () => {
     console.log(email, password);
     SignIn(email, password)
       .then((result) => {
+        toast.success("Login in Successful",{
+          position:"top-center"
+        })
         navigate(state ? state : "/");
       })
       .catch((error) => {
@@ -39,10 +43,18 @@ const Login = () => {
   const handleGoogle = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
+        toast.success("Login in Successful",{
+          position:"top-center"
+        })
         navigate(state ? state : "/");
       })
       .catch((error) => {
-        console.log(error)
+        Swal.fire({
+          title: 'Error!',
+          text: 'Incorrect email and password',
+          icon: 'error',
+          confirmButtonText: 'Try Again'
+      })
       });
   };
   const handleForgetEmail=()=>{

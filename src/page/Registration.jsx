@@ -3,6 +3,7 @@ import logo from "../assets/ChillGame.png";
 import { AuthContext } from "../authprovider/AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 const Registration = () => {
   const {SignUp, setUser, UpdateProfile} = useContext(AuthContext)
   const [errormassage, setErrorMassage] = useState("");
@@ -38,6 +39,9 @@ const Registration = () => {
       const user = result.user
       setUser(user)
       UpdateProfile({displayName:name, photoURL:photourl})
+      toast.success("SignUp in Successful",{
+        position:"top-center"
+      })
       navigate("/");
     })
     .catch((error)=>{

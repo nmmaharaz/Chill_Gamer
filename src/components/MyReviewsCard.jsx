@@ -25,7 +25,7 @@ const MyReviewsCard = ({ review, myReview, setMyReview }) => {
             title: 'Sueccess!',
             text: 'Review added successfully',
             icon: 'success',
-            confirmButtonText: 'Cool'
+            confirmButtonText: 'Close'
           })
           const remaining = myReview.filter(r => r._id !==id)
           setMyReview(remaining)

@@ -29,9 +29,6 @@ const UpdateReview = () => {
     setGanresData(value);
   }
 
-  console.log(ratingCount)
-  console.log(passingYear)
-  console.log(ganresData)
 
   const handleRatingIncrease = () => {
     setRatingCount(ratingCount + 1);
