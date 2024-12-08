@@ -10,10 +10,8 @@ const Navbar = () => {
     e.preventDefault();
     SignOut()
     .then((result)=>{
-      console.log("ami logout hoyechi")
     })
     .catch((error)=>{
-      console.log("Miya eto vul koro keno?")
     })
   }
   const [hover, setHover] = useState(false);

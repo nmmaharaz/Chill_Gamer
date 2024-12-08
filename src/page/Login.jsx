@@ -13,7 +13,6 @@ const Login = () => {
   } = useContext(AuthContext)
   const [showPassword, setShowPassword] = useState(false);
   const { state } = useLocation();
-  console.log(state)
   const emailRef = useRef()
   const navigate = useNavigate();
   const {SignIn} = useContext(AuthContext)
@@ -21,7 +20,6 @@ const Login = () => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(email, password);
     SignIn(email, password)
       .then((result) => {
         toast.success("Login in Successful",{
@@ -60,7 +58,6 @@ const Login = () => {
   const handleForgetEmail=()=>{
     const email = emailRef.current.value
     setForgetEmail(email)
-    console.log("Hellow Click porche")
     navigate("/forgetpassword")
   }
   return (

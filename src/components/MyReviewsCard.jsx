@@ -4,7 +4,6 @@ import StarRatings from "react-star-ratings";
 import Swal from "sweetalert2";
 
 const MyReviewsCard = ({ review, myReview, setMyReview }) => {
-  console.log(review)
 
   const {
     _id,

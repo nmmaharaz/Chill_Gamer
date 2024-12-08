@@ -5,9 +5,7 @@ import { Typewriter } from "react-simple-typewriter";
 
 const MyReviews = () => {
     const {user} = useContext(AuthContext)
-    console.log(user?.email)
   const [myReview, setMyReview] = useState([])
-  console.log(myReview)
   useEffect(()=>{
     fetch(`http://localhost:5000/myreview/${user?.email}`)
     .then(res=>res.json())

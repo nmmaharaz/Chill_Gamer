@@ -8,7 +8,6 @@ import { Typewriter } from "react-simple-typewriter";
 const MyWishlist = () => {
   const { user } = useContext(AuthContext);
   const [mywishlist, setMyWishList] = useState([]);
-  console.log(mywishlist);
   useEffect(() => {
     fetch(`http://localhost:5000/mywishlist/${user?.email}`)
       .then((res) => res.json())

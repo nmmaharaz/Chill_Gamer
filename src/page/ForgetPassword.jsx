@@ -8,10 +8,10 @@ const ForgetPassword = () => {
     const handleLogOut = () =>{
         SignOut()
         .then(result=>{
-            console.log(result)
+
         })
         .catch(error=>{
-            console.log(error)
+
         })
       }
     
@@ -20,10 +20,10 @@ const ForgetPassword = () => {
         const email = e.target.email.value;
         forgetPassword(email)
         .then(result=>{
-            console.log(result)
+            
         })
         .catch(error=>{
-            console.log(error)
+          
         })
       };
       const handleResetPassword = (e) => {

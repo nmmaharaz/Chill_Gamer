@@ -88,7 +88,6 @@ const Home = () => {
   ];
 
   const [reviewData, setReviewData] = useState(9);
-  console.log(reviewData);
 
   useEffect(() => {
     fetch("http://localhost:5000/review")
