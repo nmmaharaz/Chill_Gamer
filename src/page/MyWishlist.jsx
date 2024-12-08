@@ -9,7 +9,7 @@ const MyWishlist = () => {
   const { user } = useContext(AuthContext);
   const [mywishlist, setMyWishList] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/mywishlist/${user?.email}`)
+    fetch(`https://chill-game-server-eight.vercel.app/mywishlist/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setMyWishList(data));
   }, [user]);
@@ -17,7 +17,7 @@ const MyWishlist = () => {
 
   
   const handleDelete =(id) =>{
-    fetch(`http://localhost:5000/mywishlist/${id}`,{
+    fetch(`https://chill-game-server-eight.vercel.app/mywishlist/${id}`,{
         method:"DELETE"
     })
     .then(res=>res.json())

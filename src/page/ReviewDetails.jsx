@@ -29,7 +29,7 @@ const ReviewDetails = () => {
       ganres,
       email,
       name}
-    fetch('http://localhost:5000/mywishlist',{
+    fetch('https://chill-game-server-eight.vercel.app/mywishlist',{
       method:"POST",
       headers:{
         'content-type':'application/json'

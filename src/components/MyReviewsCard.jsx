@@ -14,7 +14,7 @@ const MyReviewsCard = ({ review, myReview, setMyReview }) => {
     Ganres} = review;
 
   const handleDelete =(id) =>{
-    fetch(`http://localhost:5000/review/${id}`,{
+    fetch(`https://chill-game-server-eight.vercel.app/review/${id}`,{
         method:"DELETE"
     })
     .then(res=>res.json())

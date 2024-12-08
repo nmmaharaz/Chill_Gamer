@@ -10,26 +10,22 @@ const AllReview = () => {
     const [value, setValue] = useState(null);
   const [ganresValue, setGanresValue] = useState(null);
 
-    // const handleGenres = () =>{
-    //     setValue(null)
-        
-    // }
 
 useEffect(()=>{
     if(value){
         if(value.value == "Rating"){
-                    fetch('http://localhost:5000/rating')
+                    fetch('https://chill-game-server-eight.vercel.app/rating')
                     .then(res=>res.json())
                     .then(data=>setData(data))
                 }
                 else{
-                    fetch('http://localhost:5000/publishingyear')
+                    fetch('https://chill-game-server-eight.vercel.app/publishingyear')
                     .then(res=>res.json())
                     .then(data=>setData(data))
                 }
     
     }else if(ganresValue){
-        fetch(`http://localhost:5000/genres/${ganresValue.value}`)
+        fetch(`https://chill-game-server-eight.vercel.app/genres/${ganresValue.value}`)
         .then(res=>res.json())
         .then(data=>setData(data))
     }

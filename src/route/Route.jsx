@@ -23,13 +23,13 @@ const router = createBrowserRouter([
         {
             path:"/",
             element:<Home></Home>,
-            loader:()=>fetch('http://localhost:5000/highestratedgame')
+            loader:()=>fetch('https://chill-game-server-eight.vercel.app/highestratedgame')
             
         },
         {
           path:"/reviews",
           element:<AllReview></AllReview>,
-          loader:()=>fetch('http://localhost:5000/review')
+          loader:()=>fetch('https://chill-game-server-eight.vercel.app/review')
         },
         {
             path:"/login",
@@ -46,7 +46,7 @@ const router = createBrowserRouter([
         {
           path:"/review/:id",
           element: <PrivateRoute><ReviewDetails></ReviewDetails></PrivateRoute>,
-          loader: ({params})=>fetch(`http://localhost:5000/review/${params.id}`)
+          loader: ({params})=>fetch(`https://chill-game-server-eight.vercel.app/review/${params.id}`)
         },
         {
           path:"/myReviews",
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
         {
           path:"/updateReview/:id",
           element:<UpdateReview></UpdateReview>,
-          loader: ({params})=>fetch(`http://localhost:5000/review/${params.id}`)
+          loader: ({params})=>fetch(`https://chill-game-server-eight.vercel.app/review/${params.id}`)
         },
         {
           path:"/myWatchlist",

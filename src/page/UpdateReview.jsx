@@ -53,7 +53,7 @@ const UpdateReview = () => {
 
     const addReview = {_id:_id, gameName:gameName, gameTitle:gameTitle, description:description, rating:rating, passingyear:passingyear, Ganres:Ganres, email:email, name:name,}
 
-    fetch(`http://localhost:5000/review/${_id}`,{
+    fetch(`https://chill-game-server-eight.vercel.app/review/${_id}`,{
       method:'PATCH',
       headers:{
         'content-type':'application/json'
