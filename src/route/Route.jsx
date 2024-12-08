@@ -9,6 +9,7 @@ import ReviewDetails from "../page/ReviewDetails";
 import MyReviews from "../page/MyReviews";
 import UpdateReview from "../page/UpdateReview";
 import MyWishlist from "../page/MyWishlist";
+import ForgetPassword from "../page/ForgetPassword";
 
 
 const router = createBrowserRouter([
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
         {
           path:"/myWatchlist",
           element:<MyWishlist></MyWishlist>
+        },
+        {
+          path:"/forgetpassword",
+          element:<ForgetPassword></ForgetPassword>
         }
       ]
     },

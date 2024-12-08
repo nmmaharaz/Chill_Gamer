@@ -1,15 +1,11 @@
 import { useLoaderData } from "react-router-dom";
 import Review from "../components/Review";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Select from "react-select";
-import { AuthContext } from "../authprovider/AuthProvider";
 
 const AllReview = () => {
-  const { setAllData} = useContext(AuthContext)
     const info = useLoaderData();
-    setAllData(info)
     const [data, setData] = useState(info)
-  
     const [value, setValue] = useState(null);
   const [ganresValue, setGanresValue] = useState(null);
 
@@ -80,7 +76,7 @@ useEffect(()=>{
           />
         </div>
       </div>
-      <div className=" grid gap-2 gap-y-7 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+      <div className=" grid gap-2 gap-y-7 mb-7 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
         {data.map((review) => (
           <Review key={review._id} review={review}></Review>
         ))}

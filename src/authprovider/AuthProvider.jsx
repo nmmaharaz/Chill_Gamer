@@ -7,7 +7,9 @@ export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null)
-  const [allData, setAllData] = useState()
+  const [loading, setLoading] = useState(true)
+  const [forgetEmail, setForgetEmail] = useState("")
+  console.log("Hellow forget email", forgetEmail)
   const SignUp = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
@@ -30,6 +32,14 @@ const AuthProvider = ({ children }) => {
     return document.body.classList.toggle("dark");
   };
 
+  const forgetPassword = (email)=>{
+    return sendPasswordResetEmail(auth, email)
+}
+
+const resetPassword = (email)=>{
+    return sendPasswordResetEmail(auth, email)
+}
+
   useEffect(()=>{
     const unSubcribe = onAuthStateChanged(auth, (currentUser)=>{
       setUser(currentUser)
@@ -49,8 +59,12 @@ const AuthProvider = ({ children }) => {
     SignOut,
     handleDarkMode,
     dark,
-    setAllData,
-    allData,
+    forgetEmail,
+    setForgetEmail,
+    forgetPassword,
+    resetPassword,
+    loading,
+    setLoading,
   };
   return (
     <div>

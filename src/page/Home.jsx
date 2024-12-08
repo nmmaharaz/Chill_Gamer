@@ -1,9 +1,11 @@
 import { Link, useLoaderData } from "react-router-dom";
 import StarRatings from "react-star-ratings";
 import Hero from "../components/Hero";
+import gamesbanner from "../assets/gamesbanner.jpg"
 import TeamWork from "../components/TeamWork";
-import { useCountUp } from 'react-countup';
-import React from "react";
+import { useCountUp } from "react-countup";
+import React, { useEffect, useState } from "react";
+import { GrRadialSelected } from "react-icons/gr";
 
 const Home = () => {
   const data = useLoaderData();
@@ -83,31 +85,32 @@ const Home = () => {
     },
   ];
 
+  const [reviewData, setReviewData] = useState(9);
+  console.log(reviewData);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/review")
+      .then((res) => res.json())
+      .then((data) => setReviewData(parseInt(data.length)));
+  }, []);
+
   const countUpReviewRef = React.useRef(null);
   const countUpWishRef = React.useRef(null);
 
   const { start } = useCountUp({
     ref: countUpReviewRef,
-    start: 11,
-    end: 1234567,
+    start: 0,
+    end: { reviewData },
     delay: 1000,
     duration: 5,
   });
   const { review } = useCountUp({
     ref: countUpWishRef,
-    start: 11,
+    start: { reviewData },
     end: 1234567,
     delay: 1000,
     duration: 5,
   });
-  // const { start } = useCountUp({
-  //   ref: countUpRef,
-  //   start: 11,
-  //   end: 1234567,
-  //   delay: 1000,
-  //   duration: 5,
-  // });
-
 
   return (
     <div className="dark:bg-black">
@@ -161,36 +164,77 @@ const Home = () => {
           ))}
         </div>
 
-{/* review Count */}
+        <div className="dark:dark:bg-[url('/img/hero-pattern.svg')] bg-gamesbanner object-fill mt-10 bg-cover">
+          <div className="hero min-h-screen">
+            <div className="hero-content flex-col lg:flex-row-reverse">
+              <img
+                src={gamesbanner}
+                className="max-w-2xl backdrop-opacity-100	 bg-opacity-20 rounded-lg shadow-2xl"
+              />
+              <div className="*:text-white">
+                <h1 className="text-5xl font-bold">Gamxo an unknown printer took galley type scrambled.</h1>
+                <p className="py-6">
+                  Provident cupiditate voluptatem et in. Quaerat fugiat ut
+                  assumenda excepturi exercitationem quasi. In deleniti eaque
+                  aut repudiandae et a id nisi.
+                </p>
+                <p className="flex items-center"><GrRadialSelected className="text-[#3157d5] mr-4"/> 
+                Modern Gaming Blogging </p>
+                <p className="flex items-center"><GrRadialSelected className="text-[#3157d5] mr-4"/> 
+                Smart Grid System </p>
+                <p className="flex items-center"><GrRadialSelected className="text-[#3157d5] mr-4"/> 
+                Clean Code </p>
+                <p className="flex items-center"><GrRadialSelected className="text-[#3157d5] mr-4"/> 
+                Business Way </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* review Count */}
 
         <div>
-        <div className="w-10/12 flex justify-between mx-auto shadow">
-  <div className="stat">
-    <div className="stat-title text-center">Genres</div>
-    <div className="stat-value text-center">11</div>
-  </div>
-  <div className="stat">
-    <div className="stat-title text-center">Total Rivew</div>
-    <div ref={countUpReviewRef} onClick={start} className="stat-value text-center">Start</div>
-  </div>
-  <div className="stat">
-    <div className="stat-title text-center">Total Wishlist</div>
-    <div ref={countUpWishRef} onClick={review} className="stat-value text-center">11</div>
-  </div>
-</div>
+          <div className="w-10/12 flex justify-between mx-auto shadow">
+            <div className="stat">
+              <div className="stat-title text-center">Genres</div>
+              <div className="stat-value text-center">11</div>
+            </div>
+            <div className="stat">
+              <div className="stat-title text-center">Total Rivew</div>
+              <div
+                ref={countUpReviewRef}
+                onClick={start}
+                className="stat-value text-center"
+              >
+                Start
+              </div>
+            </div>
+            <div className="stat">
+              <div className="stat-title text-center">Total Wishlist</div>
+              <div
+                ref={countUpWishRef}
+                onClick={review}
+                className="stat-value text-center"
+              >
+                11
+              </div>
+            </div>
+          </div>
         </div>
         <div className="dark:bg-[url('/img/hero-pattern.svg')] bg-banner py-12 rounded-t-2xl">
-        <div className="w-10/12 mx-auto text-center">
-          <div className="divider dark:divider-primary text-3xl -12 dark:text-white  text-[#2140a9] font-bold">
-          Meet Our Team
-        </div>
-          <p className="mt-4 mb-12 dark:text-white">We talk a lot about hope helping and teamwork</p>
-        </div>
-        <div className="grid gap-7 w-10/12 mx-auto gap-y-7 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-          {teamworker.map((team) => (
-            <TeamWork key={team.id} team={team}></TeamWork>
-          ))}
-        </div>
+          <div className="w-10/12 mx-auto text-center">
+            <div className="divider dark:divider-primary text-3xl -12 dark:text-white  text-[#2140a9] font-bold">
+              Meet Our Team
+            </div>
+            <p className="mt-4 mb-12 dark:text-white">
+              We talk a lot about hope helping and teamwork
+            </p>
+          </div>
+          <div className="grid gap-7 w-10/12 mx-auto gap-y-7 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+            {teamworker.map((team) => (
+              <TeamWork key={team.id} team={team}></TeamWork>
+            ))}
+          </div>
         </div>
       </div>
     </div>

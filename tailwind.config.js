@@ -11,6 +11,7 @@ export default {
     extend: {
       backgroundImage: {
         banner: "url('./src/assets/herobanner.jpg')",
+        gamesbanner: "url('./src/assets/gamesbanner.jpg')",
       },
     },
   },

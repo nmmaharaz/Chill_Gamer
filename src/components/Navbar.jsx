@@ -3,6 +3,7 @@ import logo from "../assets/ChillGame.png";
 import { useContext, useState } from "react";
 import { AuthContext } from "../authprovider/AuthProvider";
 import { IoMoon, IoSunny } from "react-icons/io5";
+import { CgProfile } from "react-icons/cg";
 const Navbar = () => {
   const {SignOut, handleDarkMode, dark, user} = useContext(AuthContext)
   const handleSignOut = (e) =>{
@@ -87,17 +88,25 @@ const Navbar = () => {
                 <NavLink to="myWatchlist">Game WatchList</NavLink>
               </li>
               <button className="" onClick={() => handleDarkMode()}>
-            {dark && <IoSunny className="text-white text-2xl" />}
-            {!dark && <IoMoon className="text-white text-2xl" />}
+              <input type="checkbox" className="toggle" defaultChecked />
           </button>
               
           </ul>
         </div>
         <div className="navbar-end">
-          <div data-tip={user?.displayName} className="tooltip tooltip-bottom"><img className="w-12  cursor-pointer mr-3 h-12 rounded-full" src={user?.photoURL} alt="" /></div>
+        {
+            user && user?.email?<div className="flex items-center">
+               {
+                user && user?.photoURL ? (<div data-tip={user?.displayName} className="tooltip tooltip-bottom"><img className="w-[45px] h-[45px] rounded-full" src={user.photoURL} alt="" /></div>):(<p><CgProfile className="text-4xl" /></p>)
+               }
+              <NavLink onClick={handleSignOut} className="ml-3" to="/registration"><a className="btn text-white border-none bg-[#d77bdf]">LogOut</a></NavLink>
+              </div>:<div><NavLink to="/login"><a className="btn border-none text-white bg-[#d77bdf]">Login</a></NavLink>
+              <NavLink className="ml-3" to="/registration"><a className="btn text-white border-none bg-[#d77bdf]">Registration</a></NavLink></div>
+          }
+          {/* <div data-tip={user?.displayName} className="tooltip tooltip-bottom"><img className="w-12  cursor-pointer mr-3 h-12 rounded-full" src={user?.photoURL} alt="" /></div>
           <NavLink to="/login"><a className="btn border-none text-white bg-[#d77bdf]">Login</a></NavLink>
           <NavLink className="ml-3" to="/registration"><a className="btn text-white border-none bg-[#d77bdf]">Registration</a></NavLink>
-          <NavLink onClick={handleSignOut} className="ml-3" to="/registration"><a className="btn text-white border-none bg-[#d77bdf]">LogOut</a></NavLink>
+          <NavLink onClick={handleSignOut} className="ml-3" to="/registration"><a className="btn text-white border-none bg-[#d77bdf]">LogOut</a></NavLink> */}
         </div>
       </div>
     </div>
