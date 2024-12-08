@@ -1,23 +1,21 @@
+import logo from "../assets/ChillGame.png"
 const Footer = () => {
   return (
-    <div>
-      <footer className="footer bg-neutral text-neutral-content p-10">
-        <nav>
-          <h6 className="footer-title">Services</h6>
-          <a className="link link-hover">Branding</a>
-          <a className="link link-hover">Design</a>
-          <a className="link link-hover">Marketing</a>
-          <a className="link link-hover">Advertisement</a>
+    <div className="bg-[#16234d]">
+      <footer className="flex flex-col items-center lg:flex-row w-10/12 mx-auto *:text-white justify-around p-10">
+        <nav className="flex *:text-center *:lg:text-left flex-col *:mb-2">
+          <h6 className="link link-hover">Home</h6>
+          <a className="link link-hover">All Review</a>
+          <a className="link link-hover">Add Review</a>
+          <a className="link link-hover">My Wishlist</a>
         </nav>
-        <nav>
-          <h6 className="footer-title">Company</h6>
-          <a className="link link-hover">About us</a>
-          <a className="link link-hover">Contact</a>
-          <a className="link link-hover">Jobs</a>
-          <a className="link link-hover">Press kit</a>
+        <nav className="my-7 lg:my-0">
+          <div className="w-24">
+            <img src={logo} alt="" />
+          </div>
         </nav>
-        <nav>
-          <h6 className="footer-title">Legal</h6>
+        <nav className="flex flex-col *:text-center *:lg:text-left *:mb-2">
+          <h6 className="link link-hover">Legal</h6>
           <a className="link link-hover">Terms of use</a>
           <a className="link link-hover">Privacy policy</a>
           <a className="link link-hover">Cookie policy</a>

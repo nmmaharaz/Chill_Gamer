@@ -3,6 +3,7 @@ import { AuthContext } from "../authprovider/AuthProvider";
 import { MdDelete } from "react-icons/md";
 import StarRatings from "react-star-ratings";
 import Swal from "sweetalert2";
+import { Typewriter } from "react-simple-typewriter";
 
 const MyWishlist = () => {
   const { user } = useContext(AuthContext);
@@ -37,6 +38,9 @@ const MyWishlist = () => {
 
   return (
     <div className="w-11/12 mx-auto">
+       <div className="divider dark:divider-primary text-3xl my-12 dark:text-white  text-[#2140a9] font-bold">
+          <Typewriter words={["My Wishlist"]} />
+        </div>
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}

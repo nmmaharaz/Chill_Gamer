@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 import { AuthContext } from "../authprovider/AuthProvider";
 import Swal from "sweetalert2";
+import { Typewriter } from "react-simple-typewriter";
 
 
 const AddReview = () => {
@@ -69,7 +70,9 @@ const AddReview = () => {
   return (
     <div className="my-10">
       <div className="w-8/12 mx-auto">
-
+      <div className="divider dark:divider-primary text-3xl my-12 dark:text-white  text-[#2140a9] font-bold">
+          <Typewriter words={["Add Review"]} />
+        </div>
       <div className="card mx-auto bg-blue-50 w-full shrink-0 shadow-2xl">
         <form onSubmit={handleSubmit} className="card-body">
         <div className="form-control">

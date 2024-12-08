@@ -7,6 +7,7 @@ import { useCountUp } from "react-countup";
 import React, { useEffect, useState } from "react";
 import { GrRadialSelected } from "react-icons/gr";
 import { Typewriter } from "react-simple-typewriter";
+import { Fade } from "react-awesome-reveal";
 
 const Home = () => {
   const data = useLoaderData();
@@ -125,6 +126,7 @@ const Home = () => {
             <div className="grid my-6 gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
               {data.map((highestratedData) => (
                 <div key={highestratedData._id}>
+                  <Fade direction={"up"}>
                   <div className="">
                     <div className="card mx-auto overflow-hidden glass bg-white dark:bg-gray-200 border-none rounded-2xl backdrop-blur-md w-80 shadow-xl">
                       <figure className="px-7 pt-7">
@@ -163,6 +165,7 @@ const Home = () => {
                       </div>
                     </div>
                   </div>
+                  </Fade>
                 </div>
               ))}
             </div>
@@ -174,11 +177,11 @@ const Home = () => {
             <div className="hero-content flex-col lg:flex-row-reverse">
               <img
                 src={gamesbanner}
-                className="max-w-sm sm:w-xl lg:w-2xl backdrop-opacity-100	 bg-opacity-20 rounded-lg shadow-2xl"
+                className="max-w-sm sm:w-xl lg:max-w-xl  backdrop-opacity-100	 bg-opacity-20 rounded-lg shadow-2xl"
               />
               <div className="*:text-white">
                 <h1 className="text-5xl font-bold">
-                  Gamxo an unknown printer took galley type scrambled.
+                 <Typewriter words={[" Gamxo an unknown printer took galley type scrambled."]} />
                 </h1>
                 <p className="py-6">
                   Provident cupiditate voluptatem et in. Quaerat fugiat ut
@@ -206,36 +209,6 @@ const Home = () => {
           </div>
         </div>
 
-        {/* review Count */}
-
-        <div>
-          <div className="w-10/12 flex justify-between mx-auto shadow">
-            <div className="stat">
-              <div className="stat-title text-center">Genres</div>
-              <div className="stat-value text-center">11</div>
-            </div>
-            <div className="stat">
-              <div className="stat-title text-center">Total Rivew</div>
-              <div
-                ref={countUpReviewRef}
-                onClick={start}
-                className="stat-value text-center"
-              >
-                Start
-              </div>
-            </div>
-            <div className="stat">
-              <div className="stat-title text-center">Total Wishlist</div>
-              <div
-                ref={countUpWishRef}
-                onClick={review}
-                className="stat-value text-center"
-              >
-                11
-              </div>
-            </div>
-          </div>
-        </div>
         <div className="dark:bg-[url('/img/hero-pattern.svg')] bg-banner py-12 rounded-t-2xl">
           <div className="w-10/12 mx-auto text-center">
             <div className="divider dark:divider-primary text-3xl -12 dark:text-white  text-[#2140a9] font-bold">

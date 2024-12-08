@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import Review from "../components/Review";
 import { useEffect, useState } from "react";
 import Select from "react-select";
+import { Typewriter } from "react-simple-typewriter";
 
 const AllReview = () => {
     const info = useLoaderData();
@@ -76,6 +77,9 @@ useEffect(()=>{
           />
         </div>
       </div>
+      <div className="divider dark:divider-primary text-3xl my-12 dark:text-white  text-[#2140a9] font-bold">
+          <Typewriter words={["All Reviews"]} />
+        </div>
       <div className=" grid gap-2 gap-y-7 mb-7 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
         {data.map((review) => (
           <Review key={review._id} review={review}></Review>
