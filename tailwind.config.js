@@ -8,7 +8,11 @@ export default {
   ],
   darkMode:"class",
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        banner: "url('./src/assets/herobanner.jpg')",
+      },
+    },
   },
   plugins: [
     daisyui,

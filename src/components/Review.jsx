@@ -5,7 +5,7 @@ const Review = ({ review }) => {
     const {_id, gameName, gameTitle, description, rating, passingyear, Ganres, email, name} = review
   return (
     <div>
-      <div className="card overflow-hidden rounded-2xl backdrop-blur-md w-80 shadow-xl">
+      <div className="card overflow-hidden rounded-2xl backdrop-blur-md max-w-80 shadow-xl">
         <figure className="px-7 pt-7">
           <img
             src={gameName}

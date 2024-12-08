@@ -1,10 +1,10 @@
 import { NavLink } from "react-router-dom";
 import logo from "../assets/ChillGame.png";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../authprovider/AuthProvider";
 import { IoMoon, IoSunny } from "react-icons/io5";
 const Navbar = () => {
-  const {SignOut, handleDarkMode, dark,} = useContext(AuthContext)
+  const {SignOut, handleDarkMode, dark, user} = useContext(AuthContext)
   const handleSignOut = (e) =>{
     e.preventDefault();
     SignOut()
@@ -15,7 +15,11 @@ const Navbar = () => {
       console.log("Miya eto vul koro keno?")
     })
   }
-  return (
+  const [hover, setHover] = useState(false);
+  const onHover = () => {
+    setHover(!hover);
+  };
+    return (
     <div>
       <div className="navbar bg-[#16234d]">
         <div className="navbar-start">
@@ -84,12 +88,13 @@ const Navbar = () => {
               </li>
               <button className="" onClick={() => handleDarkMode()}>
             {dark && <IoSunny className="text-white text-2xl" />}
-            {!dark && <IoMoon className="text-black text-2xl" />}
+            {!dark && <IoMoon className="text-white text-2xl" />}
           </button>
               
           </ul>
         </div>
         <div className="navbar-end">
+          <div data-tip={user?.displayName} className="tooltip tooltip-bottom"><img className="w-12  cursor-pointer mr-3 h-12 rounded-full" src={user?.photoURL} alt="" /></div>
           <NavLink to="/login"><a className="btn border-none text-white bg-[#d77bdf]">Login</a></NavLink>
           <NavLink className="ml-3" to="/registration"><a className="btn text-white border-none bg-[#d77bdf]">Registration</a></NavLink>
           <NavLink onClick={handleSignOut} className="ml-3" to="/registration"><a className="btn text-white border-none bg-[#d77bdf]">LogOut</a></NavLink>

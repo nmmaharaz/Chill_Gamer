@@ -37,7 +37,7 @@ const Hero = () => {
         transitionDuration={1000} arrows={false}>
         {fadeImages.map((fadeImage, index) => (
           <div key={index}>
-            <img className="w-full h-[650px] rounded-b-xl object-fill" style={{ width: '100%' }} src={fadeImage.url} />
+            <img className="w-10/12 mx-auto h-[600px] rounded-b-xl object-fill" src={fadeImage.url} />
           </div>
         ))}
       </Fade>

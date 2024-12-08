@@ -1,10 +1,13 @@
 import { useLoaderData } from "react-router-dom";
 import Review from "../components/Review";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Select from "react-select";
+import { AuthContext } from "../authprovider/AuthProvider";
 
 const AllReview = () => {
+  const { setAllData} = useContext(AuthContext)
     const info = useLoaderData();
+    setAllData(info)
     const [data, setData] = useState(info)
   
     const [value, setValue] = useState(null);

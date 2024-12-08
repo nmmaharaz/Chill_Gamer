@@ -7,6 +7,7 @@ export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null)
+  const [allData, setAllData] = useState()
   const SignUp = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
@@ -48,6 +49,8 @@ const AuthProvider = ({ children }) => {
     SignOut,
     handleDarkMode,
     dark,
+    setAllData,
+    allData,
   };
   return (
     <div>
