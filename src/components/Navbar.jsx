@@ -21,14 +21,16 @@ const Navbar = () => {
     setHover(!hover);
   };
     return (
-    <div>
-      <div className="navbar bg-[#16234d]">
+    <div className="sticky top-0 backdrop-blur-md z-10">
+      <div className="w-full bg-[#16234d] opacity-100">
+        <div className="w-10/12 mx-auto">
+        <div className="navbar">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
+                className="h-5 text-white w-5"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -46,24 +48,21 @@ const Navbar = () => {
               className="menu menu-sm *:text-white *:font-semibold dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
               <li>
-                <NavLink to="/">Home</NavLink>
+                <NavLink className="text-[#16234d]" to="/">Home</NavLink>
               </li>
               <li>
-                <NavLink to="/reviews">All Reviews</NavLink>
+                <NavLink className="text-[#16234d]" to="/reviews">All Reviews</NavLink>
               </li>
               <li>
-                <NavLink to="/addReview">Add Review</NavLink>
+                <NavLink className="text-[#16234d]" to="/addReview">Add Review</NavLink>
               </li>
               <li>
-                <NavLink to="/myReviews">My Reviews</NavLink>
+                <NavLink className="text-[#16234d]" to="/myReviews">My Reviews</NavLink>
               </li>
               <li>
-                <NavLink to="myWatchlist">Game WatchList</NavLink>
+                <NavLink className="text-[#16234d]" to="myWatchlist">Game WatchList</NavLink>
               </li>
-              <button className="" onClick={() => handleDarkMode()}>
-            {dark && <IoSunny className="text-white text-right" />}
-            {!dark && <IoMoon />}
-          </button>
+          
             </ul>
           </div>
           <div>
@@ -87,10 +86,6 @@ const Navbar = () => {
               <li>
                 <NavLink to="myWatchlist">Game WatchList</NavLink>
               </li>
-              <button className="" onClick={() => handleDarkMode()}>
-              <input type="checkbox" className="toggle" defaultChecked />
-          </button>
-              
           </ul>
         </div>
         <div className="navbar-end">
@@ -103,10 +98,15 @@ const Navbar = () => {
               </div>:<div><NavLink to="/login"><a className="btn border-none text-white bg-[#d77bdf]">Login</a></NavLink>
               <NavLink className="ml-3" to="/registration"><a className="btn text-white border-none bg-[#d77bdf]">Registration</a></NavLink></div>
           }
+            <button className="ml-3" onClick={() => handleDarkMode()}>
+              <input type="checkbox" className="toggle" defaultChecked />
+          </button>
           {/* <div data-tip={user?.displayName} className="tooltip tooltip-bottom"><img className="w-12  cursor-pointer mr-3 h-12 rounded-full" src={user?.photoURL} alt="" /></div>
           <NavLink to="/login"><a className="btn border-none text-white bg-[#d77bdf]">Login</a></NavLink>
           <NavLink className="ml-3" to="/registration"><a className="btn text-white border-none bg-[#d77bdf]">Registration</a></NavLink>
           <NavLink onClick={handleSignOut} className="ml-3" to="/registration"><a className="btn text-white border-none bg-[#d77bdf]">LogOut</a></NavLink> */}
+        </div>
+        </div>
         </div>
       </div>
     </div>

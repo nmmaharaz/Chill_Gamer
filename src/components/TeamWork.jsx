@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const TeamWork = ({team}) => {
   return (
     <div>
-      <div className="card glass bg-base-300 max-w-80">
+      <div className="card mx-auto glass bg-base-300 max-w-80">
         <figure>
           <img className="rounded-xl w-full h-[300px]"
             src={team.photo}

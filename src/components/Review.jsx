@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
+import { Typewriter } from "react-simple-typewriter";
 import StarRatings from "react-star-ratings";
 
 const Review = ({ review }) => {
     const {_id, gameName, gameTitle, description, rating, passingyear, Ganres, email, name} = review
   return (
     <div>
-      <div className="card overflow-hidden rounded-2xl backdrop-blur-md max-w-80 shadow-xl">
+      <div className="card overflow-hidden rounded-2xl mx-auto backdrop-blur-md max-w-80 shadow-xl">
         <figure className="px-7 pt-7">
           <img
             src={gameName}
@@ -14,8 +15,8 @@ const Review = ({ review }) => {
           />
         </figure>
         <div className="mt-5 flex h-[200px] flex-col items-center justify-between text-center">
-          <h2 className="text-purple-800">{Ganres}</h2>
-          <p className="card-title px-7">{gameTitle}</p>
+          <h2 className="card-title text-purple-800"><Typewriter words={[Ganres]}/></h2>
+          <p className=" px-7">{gameTitle}</p>
           <p className="text-gray-500 px-7">{name}</p>
           <div className="flex px-7 w-full items-center justify-between">
             <p className="text-[#2a4395]">Publishing Year: {passingyear}</p>

@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../authprovider/AuthProvider";
-
+import logo from "../assets/ChillGame.png"
 const ForgetPassword = () => {
     const {forgetEmail, SignOut, forgetPassword, resetPassword} = useContext(AuthContext)
 
@@ -64,7 +64,12 @@ const ForgetPassword = () => {
           </form>
         ) : (
           <form onSubmit={handleResetPassword} className="card-body">
-            <p className="text-3xl font-bold text-center text-[#f57f25]">Reset Password</p>
+            <div className="mx-auto">
+            <img className="w-40 h-full" src={logo} alt="" />
+          </div>
+          <p className="text-xl text-center font-semibold text-[#ac52b4]">
+          Reset Password
+          </p>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
@@ -78,7 +83,7 @@ const ForgetPassword = () => {
               />
             </div>
             <div className="form-control mt-4">
-            <Link onClick={handleLogOut} to="https://gmail.com/" target="_blank" className="btn text-white bg-[#f57f25]">Reset</Link>
+            <Link onClick={handleLogOut} to="https://gmail.com/" target="_blank" className="btn text-white bg-[#16234d]">Reset</Link>
             </div>
           </form>
         )}

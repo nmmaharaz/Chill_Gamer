@@ -1,11 +1,12 @@
 import { Link, useLoaderData } from "react-router-dom";
 import StarRatings from "react-star-ratings";
 import Hero from "../components/Hero";
-import gamesbanner from "../assets/gamesbanner.jpg"
+import gamesbanner from "../assets/gamesbanner.jpg";
 import TeamWork from "../components/TeamWork";
 import { useCountUp } from "react-countup";
 import React, { useEffect, useState } from "react";
 import { GrRadialSelected } from "react-icons/gr";
+import { Typewriter } from "react-simple-typewriter";
 
 const Home = () => {
   const data = useLoaderData();
@@ -117,51 +118,55 @@ const Home = () => {
       <div className="">
         <Hero></Hero>
         <div className="divider dark:divider-primary text-3xl my-12 dark:text-white  text-[#2140a9] font-bold">
-          Highest Rated Game
+          <Typewriter words={["Highest Rated Game"]} />
         </div>
-        <div className="grid w-10/12 mx-auto my-6 gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-          {data.map((highestratedData) => (
-            <div key={highestratedData._id}>
-              <div className="">
-                <div className="card overflow-hidden glass bg-white dark:bg-gray-200 border-none rounded-2xl backdrop-blur-md w-80 shadow-xl">
-                  <figure className="px-7 pt-7">
-                    <img
-                      src={highestratedData.gameName}
-                      alt="Shoes"
-                      className="rounded-xl w-full h-[300px]"
-                    />
-                  </figure>
-                  <div className="mt-5 flex h-[200px] flex-col items-center justify-between text-center">
-                    <h2 className="card-title text-purple-800">
-                      {highestratedData.Ganres}
-                    </h2>
-                    <p className="">{highestratedData.gameTitle}</p>
-                    <p className="text-gray-500">{highestratedData.name}</p>
-                    <div className="flex justify-between">
-                      {highestratedData.rating && (
-                        <StarRatings
-                          rating={highestratedData.rating}
-                          starRatedColor="#f57f25"
-                          starDimension="18px"
-                          starSpacing="1px"
-                          numberOfStars={5}
-                          name="rating"
+        <div className="w-10/12 mx-auto">
+          <div className="mx-auto">
+            <div className="grid my-6 gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+              {data.map((highestratedData) => (
+                <div key={highestratedData._id}>
+                  <div className="">
+                    <div className="card mx-auto overflow-hidden glass bg-white dark:bg-gray-200 border-none rounded-2xl backdrop-blur-md w-80 shadow-xl">
+                      <figure className="px-7 pt-7">
+                        <img
+                          src={highestratedData.gameName}
+                          alt="Shoes"
+                          className="rounded-xl w-full h-[300px]"
                         />
-                      )}
-                    </div>
-                    <div className="w-full">
-                      <Link
-                        to={`/review/${highestratedData._id}`}
-                        className="btn text-white w-full border-none rounded-none bg-[#16234d]"
-                      >
-                        Explore Details
-                      </Link>
+                      </figure>
+                      <div className="mt-5 flex h-[200px] flex-col items-center justify-between text-center">
+                        <h2 className="card-title text-purple-800">
+                          <Typewriter words={[highestratedData.Ganres]} />
+                        </h2>
+                        <p className="">{highestratedData.gameTitle}</p>
+                        <p className="text-gray-500">{highestratedData.name}</p>
+                        <div className="flex justify-between">
+                          {highestratedData.rating && (
+                            <StarRatings
+                              rating={highestratedData.rating}
+                              starRatedColor="#f57f25"
+                              starDimension="18px"
+                              starSpacing="1px"
+                              numberOfStars={5}
+                              name="rating"
+                            />
+                          )}
+                        </div>
+                        <div className="w-full">
+                          <Link
+                            to={`/review/${highestratedData._id}`}
+                            className="btn text-white w-full border-none rounded-none bg-[#16234d]"
+                          >
+                            Explore Details
+                          </Link>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
 
         <div className="dark:dark:bg-[url('/img/hero-pattern.svg')] bg-gamesbanner object-fill mt-10 bg-cover">
@@ -169,23 +174,33 @@ const Home = () => {
             <div className="hero-content flex-col lg:flex-row-reverse">
               <img
                 src={gamesbanner}
-                className="max-w-2xl backdrop-opacity-100	 bg-opacity-20 rounded-lg shadow-2xl"
+                className="max-w-sm sm:w-xl lg:w-2xl backdrop-opacity-100	 bg-opacity-20 rounded-lg shadow-2xl"
               />
               <div className="*:text-white">
-                <h1 className="text-5xl font-bold">Gamxo an unknown printer took galley type scrambled.</h1>
+                <h1 className="text-5xl font-bold">
+                  Gamxo an unknown printer took galley type scrambled.
+                </h1>
                 <p className="py-6">
                   Provident cupiditate voluptatem et in. Quaerat fugiat ut
                   assumenda excepturi exercitationem quasi. In deleniti eaque
                   aut repudiandae et a id nisi.
                 </p>
-                <p className="flex items-center"><GrRadialSelected className="text-[#3157d5] mr-4"/> 
-                Modern Gaming Blogging </p>
-                <p className="flex items-center"><GrRadialSelected className="text-[#3157d5] mr-4"/> 
-                Smart Grid System </p>
-                <p className="flex items-center"><GrRadialSelected className="text-[#3157d5] mr-4"/> 
-                Clean Code </p>
-                <p className="flex items-center"><GrRadialSelected className="text-[#3157d5] mr-4"/> 
-                Business Way </p>
+                <p className="flex items-center">
+                  <GrRadialSelected className="text-[#3157d5] mr-4" />
+                  Modern Gaming Blogging{" "}
+                </p>
+                <p className="flex items-center">
+                  <GrRadialSelected className="text-[#3157d5] mr-4" />
+                  Smart Grid System{" "}
+                </p>
+                <p className="flex items-center">
+                  <GrRadialSelected className="text-[#3157d5] mr-4" />
+                  Clean Code{" "}
+                </p>
+                <p className="flex items-center">
+                  <GrRadialSelected className="text-[#3157d5] mr-4" />
+                  Business Way{" "}
+                </p>
               </div>
             </div>
           </div>
@@ -224,7 +239,7 @@ const Home = () => {
         <div className="dark:bg-[url('/img/hero-pattern.svg')] bg-banner py-12 rounded-t-2xl">
           <div className="w-10/12 mx-auto text-center">
             <div className="divider dark:divider-primary text-3xl -12 dark:text-white  text-[#2140a9] font-bold">
-              Meet Our Team
+              <Typewriter words={["Meet Our Team"]} />
             </div>
             <p className="mt-4 mb-12 dark:text-white">
               We talk a lot about hope helping and teamwork

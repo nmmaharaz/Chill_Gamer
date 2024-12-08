@@ -156,7 +156,10 @@ const UpdateReview = () => {
               <span className="label-text">Publishing Year</span>
             </label>
             <select onChange={handleChange} defaultValue={passingyear} className="input input-bordered w-full" name="passing" id="">
-              <option value="">Select</option>
+            <option value="2017">2017</option>
+              <option value="2018">2018</option>
+              <option value="2019">2019</option>
+              <option value="2020">2020</option>
               <option value="2021">2021</option>
               <option value="2022">2022</option>
               <option value="2023">2023</option>

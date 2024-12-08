@@ -11,12 +11,14 @@ import UpdateReview from "../page/UpdateReview";
 import MyWishlist from "../page/MyWishlist";
 import ForgetPassword from "../page/ForgetPassword";
 import PrivateRoute from "../components/PrivateRoute";
+import Error from "../components/Error";
 
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <MainLayout></MainLayout>,
+      errorElement:<Error></Error>,
       children:[
         {
             path:"/",
