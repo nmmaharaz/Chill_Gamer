@@ -36,7 +36,8 @@ const MyWishlist = () => {
   }
 
   return (
-    <div className="w-11/12 mx-auto">
+    <div className="">
+      <div className="w-11/12 mx-auto">
        <div className="divider dark:divider-primary text-3xl my-12 dark:text-white  text-[#2140a9] font-bold">
           <Typewriter words={["My Wishlist"]} />
         </div>
@@ -106,6 +107,7 @@ const MyWishlist = () => {
           </tbody>
         </table>
       </div>
+    </div>
     </div>
   );
 };

@@ -1,5 +1,7 @@
 // import { useState } from "react";
+import { CgMail, CgProfile } from "react-icons/cg";
 import { GrRadialSelected } from "react-icons/gr";
+import { MdSaveAs } from "react-icons/md";
 import { useLoaderData } from "react-router-dom";
 import StarRatings from "react-star-ratings";
 import Swal from "sweetalert2";
@@ -49,31 +51,28 @@ const ReviewDetails = () => {
 
 
   return (
-    <div className="">
+    <div className="dark:bg-white py-36 bg-black">
         <div className="">
-          <div className="w-7/12 mx-auto min-h-screen">
-            <div className="flex my-10 items-center justify-between flex-col lg:flex-row-reverse">
-             <div className="min-w-[350px]">
+          <div className="w-10/12 mx-auto min-h-screen">
+            <div className="flex flex-col bg-opacity-20 p-8 rounded-2xl dark:bg-opacity-20 bg-[#633aa9] items-center justify-between">
+             <div className="w-full">
              <img
                 src={gameName}
-                className=" w-full rounded-lg shadow-2xl"
+                className=" w-full h-[400px] object-cover  rounded-lg shadow-2xl"
               />
              </div>
-              <div className="">
-                <h1 className="text-5xl text-red-700 font-bold">{Ganres}</h1>
-                <p className="text-2xl pt-4 text-black font-semibold">
-                 {gameTitle}
-                </p>
-                <p className="flex text-black pt-11 items-center">
-                {description} </p>
-                <p className="pt-1 text-black"> 
-                {name} </p>
-                <p className="py-1 text-black"> 
-                {email} </p>
+              <div className="-mt-16 dark:*:text-[#633aa9] *:text-white ">
+                <h1 className="text-5xl font-bold">{Ganres}</h1>
+                <div>
+                <div className=" justify-between flex rounded-2xl items-center px-8 py-4 dark:bg-opacity-5 bg-[#12042a] mt-10">
                 <div className="flex items-center">
-                  <p className="text-black mr-8">Publishing Year: {passingyear}</p>
+                <p className="flex items-center mr-16"> <CgProfile className="mr-2 text-[#8750f7] hover:text-white text-2xl" />
+                {name} </p>
+                <p className="flex items-center "> <CgMail className="mr-2 text-[#8750f7]  hover:text-white text-2xl"/>
+                {email} </p>
+                </div>
+                <div>
                 <div className="flex justify-between">
-                  <p className="mr-2">Rating:</p>
                       {rating && (
                         <StarRatings
                           rating={rating}
@@ -86,7 +85,17 @@ const ReviewDetails = () => {
                       )}
                     </div>
                 </div>
+                </div>
+                <p className="text-2xl  font-semibold">
+                 {gameTitle}
+                </p>
+                <p className="flex  pt-4 items-center">
+                {description} </p>
+                </div>
+                <div className="flex justify-between items-center">
                 <button onClick={handleWishlist} className="btn btn-outline btn-secondary mt-3">Add to WatchList</button>
+                <p className="flex items-center text-xl"><MdSaveAs className="text-[#633aa9] mr-2 text-xl" /> Published: {passingyear}</p>
+                </div>
               </div>
             </div>
           </div>

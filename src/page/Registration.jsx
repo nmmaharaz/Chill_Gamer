@@ -51,7 +51,7 @@ const Registration = () => {
 
 
   return (
-    <div className="my-20">
+    <div className="py-36">
       <div className="card mx-auto bg-blue-50 w-full max-w-sm shrink-0 shadow-2xl">
         <form onSubmit={handleSignUp} className="card-body">
           <div className="mx-auto">

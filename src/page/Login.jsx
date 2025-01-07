@@ -61,7 +61,7 @@ const Login = () => {
     navigate("/forgetpassword")
   }
   return (
-    <div className="my-20">
+    <div className="py-36">
       <div className="card mx-auto bg-blue-50 w-full max-w-sm shrink-0 shadow-2xl">
         <form onSubmit={handleSignIn} className="card-body">
           <div className="mx-auto">

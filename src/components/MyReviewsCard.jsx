@@ -32,8 +32,8 @@ const MyReviewsCard = ({ review, myReview, setMyReview }) => {
     })
   }
   return (
-    <div className="my-4">
-      <div className="border rounded-2xl p-5 border-solid border-gray-200">
+    <div className="py-4 ">
+      <div className="border bg-[#141119] shadow-md shadow-gray-700 dark:shadow-gray-400 hover:shadow-[#8750f7] dark:bg-white dark:*:text-black *:text-white rounded-2xl p-5 border-solid border-gray-200">
       <div className="flex flex-col justify-center lg:flex-row">
         <div className="w-full sm:w-36 lg:w-28 mr-7  h-60 sm:h-48 lg:h-36">
         <img src={gameName} className="w-full h-full rounded-lg shadow-2xl" />

@@ -3,6 +3,7 @@ import Review from "../components/Review";
 import { useEffect, useState } from "react";
 import Select from "react-select";
 import { Typewriter } from "react-simple-typewriter";
+import Title from "../components/shered/Title";
 
 const AllReview = () => {
     const info = useLoaderData();
@@ -54,8 +55,9 @@ useEffect(()=>{
     { value: "ARPG", label: "ARPG" },
   ];
   return (
-    <div className="w-11/12 mx-auto">
-      <div className="flex justify-end my-5">
+    <div className="dark:bg-white bg-black">
+      <div className="w-10/12 mx-auto">
+      <div className="flex justify-end py-10">
         <div className="w-40">
           <Select
             placeholder="Sort"
@@ -73,14 +75,15 @@ useEffect(()=>{
           />
         </div>
       </div>
-      <div className="divider dark:divider-primary text-3xl my-12 dark:text-white  text-[#2140a9] font-bold">
-          <Typewriter words={["All Reviews"]} />
+      <div className="text-3xl my-2 dark:text-white  text-[#2140a9] font-bold">
+          <Title title={"All Reviews"}></Title>
         </div>
-      <div className=" grid gap-2 gap-y-7 mb-7 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid pt-6 pb-12 gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {data.map((review) => (
           <Review key={review._id} review={review}></Review>
         ))}
       </div>
+    </div>
     </div>
   );
 };

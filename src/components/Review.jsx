@@ -3,39 +3,59 @@ import { Typewriter } from "react-simple-typewriter";
 import StarRatings from "react-star-ratings";
 
 const Review = ({ review }) => {
-    const {_id, gameName, gameTitle, description, rating, passingyear, Ganres, email, name} = review
+  const {
+    _id,
+    gameName,
+    gameTitle,
+    description,
+    rating,
+    passingyear,
+    Ganres,
+    email,
+    name,
+  } = review;
   return (
     <div>
-      <div className="card overflow-hidden rounded-2xl mx-auto backdrop-blur-md max-w-80 shadow-xl">
-        <figure className="px-7 pt-7">
+      <div
+        key={_id}
+        className="w-full mx-auto space-y-3 rounded-xl overflow-hidden bg-[#141119] shadow-md shadow-gray-700 dark:shadow-gray-400 hover:shadow-[#8750f7] dark:bg-white"
+      >
+        <div className="relative flex h-48 w-full justify-center lg:h-[260px]">
           <img
+            width={500}
+            height={200}
+            className=" object-cover"
             src={gameName}
-            alt="Shoes"
-            className="rounded-xl w-full h-[300px]"
+            alt="card navigate ui"
           />
-        </figure>
-        <div className="mt-5 flex h-[200px] flex-col items-center justify-between text-center">
-          <h2 className="card-title text-purple-800"><Typewriter words={[Ganres]}/></h2>
-          <p className=" px-7">{gameTitle}</p>
-          <p className="text-gray-500 px-7">{name}</p>
-          <div className="flex px-7 w-full items-center justify-between">
-            <p className="text-[#2a4395]">Publishing Year: {passingyear}</p>
-          <div className="flex items-center">
-          {
-                rating && ( <StarRatings
-                    rating={rating}
-                    starRatedColor="#f57f25"
-                    starDimension="18px"
-                    starSpacing="1px"
-                    numberOfStars={5}
-                    name='rating'
-                  />)
-            }
+        </div>
+        <div className="space-y-2 px-4 dark:text-gray-600  *:text-white pb-4 font-semibold">
+          <div className="flex justify-between items-center">
+            <h6 className=" dark:text-gray-600 text-white text-2xl">
+              {Ganres}
+            </h6>
+            <div className="flex justify-between">
+              {rating && (
+                <StarRatings
+                  rating={rating}
+                  starRatedColor="#f57f25"
+                  starDimension="18px"
+                  starSpacing="1px"
+                  numberOfStars={5}
+                  name="rating"
+                />
+              )}
             </div>
           </div>
-          <div className="w-full">
-            <Link to={`/review/${_id}`} className="btn text-white w-full border-none rounded-none bg-[#16234d]">
-              Explore Details
+          <p className="text-sm dark:text-gray-600  font-semibold text-gray-400 md:text-[16px]">
+            {gameTitle.substring(0,40)}...
+          </p>
+          <div className="flex items-center justify-between">
+            <p className="text-2xl font-bold text-[#8750f7]"></p>
+            <Link className="ml-3" to={`/review/${_id}`}>
+              <p className="hover:bg-[#141119] hover:border hover:border-solid hover:border-[#8750f7] border-none text-white bg-[#633AA9] px-6 py-2 rounded-3xl shadow-lg font-semibold">
+                Explore Details
+              </p>
             </Link>
           </div>
         </div>

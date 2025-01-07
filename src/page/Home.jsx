@@ -6,8 +6,10 @@ import TeamWork from "../components/TeamWork";
 import { useCountUp } from "react-countup";
 import React, { useEffect, useState } from "react";
 import { GrRadialSelected } from "react-icons/gr";
-import { Typewriter } from "react-simple-typewriter";
 import { Fade } from "react-awesome-reveal";
+import Title from "../components/shered/Title";
+import Typewriter from 'typewriter-effect';
+import AllReviews from "../components/Contacts";
 
 const Home = () => {
   const data = useLoaderData();
@@ -114,73 +116,83 @@ const Home = () => {
   });
 
   return (
-    <div className="dark:bg-black">
-      <div className="">
+    <div className="dark:bg-white bg-black">
+      <div className="pt-28">
         <Hero></Hero>
-        <div className="divider dark:divider-primary text-3xl my-12 dark:text-white  text-[#2140a9] font-bold">
-          <Typewriter words={["Highest Rated Game"]} />
+        <div className="text-3xl my-12 dark:text-white  text-[#2140a9] font-bold">
+          <Title title={"Featured Games"}></Title>
         </div>
         <div className="w-10/12 mx-auto">
-          <div className="mx-auto">
-            <div className="grid my-6 gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="">
+            <div className="grid my-6 gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
               {data.map((highestratedData) => (
-                <div key={highestratedData._id}>
-                  <Fade direction={"up"}>
-                  <div className="">
-                    <div className="card mx-auto overflow-hidden glass bg-white dark:bg-gray-200 border-none rounded-2xl backdrop-blur-md w-80 shadow-xl">
-                      <figure className="px-7 pt-7">
-                        <img
-                          src={highestratedData.gameName}
-                          alt="Shoes"
-                          className="rounded-xl w-full h-[300px]"
-                        />
-                      </figure>
-                      <div className="mt-5 flex h-[200px] flex-col items-center justify-between text-center">
-                        <h2 className="card-title text-purple-800">
-                          <Typewriter words={[highestratedData.Ganres]} />
-                        </h2>
-                        <p className="">{highestratedData.gameTitle}</p>
-                        <p className="text-gray-500">{highestratedData.name}</p>
-                        <div className="flex justify-between">
-                          {highestratedData.rating && (
-                            <StarRatings
-                              rating={highestratedData.rating}
-                              starRatedColor="#f57f25"
-                              starDimension="18px"
-                              starSpacing="1px"
-                              numberOfStars={5}
-                              name="rating"
-                            />
-                          )}
-                        </div>
-                        <div className="w-full">
-                          <Link
-                            to={`/review/${highestratedData._id}`}
-                            className="btn text-white w-full border-none rounded-none bg-[#16234d]"
-                          >
-                            Explore Details
-                          </Link>
-                        </div>
+                <div
+                  key={highestratedData._id}
+                  className="w-full mx-auto space-y-3 rounded-xl overflow-hidden bg-[#141119] shadow-md shadow-gray-700 dark:shadow-gray-400 hover:shadow-[#8750f7] dark:bg-white"
+                >
+                  <div className="relative flex h-48 w-full justify-center lg:h-[260px]">
+                    <img
+                      width={500}
+                      height={200}
+                      className=" object-cover"
+                      src={highestratedData.gameName}
+                      alt="card navigate ui"
+                    />
+                  </div>
+                  <div className="space-y-2 px-4 dark:text-gray-600  *:text-white pb-4 font-semibold">
+                    <div className="flex justify-between items-center">
+                      <h6 className=" dark:text-gray-600 text-white text-2xl">
+                        {highestratedData.Ganres}
+                      </h6>
+                      <div className="flex justify-between">
+                        {highestratedData.rating && (
+                          <StarRatings
+                            rating={highestratedData.rating}
+                            starRatedColor="#f57f25"
+                            starDimension="18px"
+                            starSpacing="1px"
+                            numberOfStars={5}
+                            name="rating"
+                          />
+                        )}
                       </div>
                     </div>
+                    <p className="text-sm dark:text-gray-600  font-semibold text-gray-400 md:text-[16px]">
+                      {highestratedData.gameTitle}
+                    </p>
+                    <div className="flex items-center justify-between">
+                      <p className="text-2xl font-bold text-[#8750f7]"></p>
+                      <Link className="ml-3" to={`/review/${highestratedData._id}`}>
+                        <p className="hover:bg-[#141119] hover:border hover:border-solid hover:border-[#8750f7] border-none text-white bg-[#633AA9] px-6 py-2 rounded-3xl shadow-lg font-semibold">
+                          Explore Details
+                        </p>
+                      </Link>
+                    </div>
                   </div>
-                  </Fade>
                 </div>
+                
               ))}
             </div>
           </div>
         </div>
 
-        <div className="dark:dark:bg-[url('/img/hero-pattern.svg')] bg-gamesbanner object-fill mt-10 bg-cover">
+        <div className="bg-opacity-20 dark:bg-opacity-20 bg-[#633aa9] object-fill mt-10 bg-cover">
           <div className="hero min-h-screen">
             <div className="hero-content flex-col lg:flex-row-reverse">
               <img
                 src={gamesbanner}
                 className="max-w-sm sm:w-xl lg:max-w-xl  backdrop-opacity-100	 bg-opacity-20 rounded-lg shadow-2xl"
               />
-              <div className="*:text-white">
+              <div className="dark:*:text-[#633aa9] *:text-white">
                 <h1 className="text-5xl font-bold">
-                 <Typewriter words={[" Gamxo an unknown printer took galley type scrambled."]} />
+                  <Typewriter
+                    options={{
+                      strings: ["Gamxo an unknown printer took galley type scrambled"],
+                      autoStart: true,
+                      loop: true,
+                      delay: 150,
+                    }}
+                  />
                 </h1>
                 <p className="py-6">
                   Provident cupiditate voluptatem et in. Quaerat fugiat ut
@@ -208,12 +220,10 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="dark:bg-[url('/img/hero-pattern.svg')] bg-banner py-12 rounded-t-2xl">
+        <div className=" bg-banner py-12 rounded-t-2xl">
           <div className="w-10/12 mx-auto text-center">
-            <div className="divider dark:divider-primary text-3xl -12 dark:text-white  text-[#2140a9] font-bold">
-              <Typewriter words={["Meet Our Team"]} />
-            </div>
-            <p className="mt-4 mb-12 dark:text-white">
+            <Title title={"Meet Our Team"}></Title>
+            <p className="mt-1 mb-12 text-gray-400 dark:text-gray-700">
               We talk a lot about hope helping and teamwork
             </p>
           </div>
@@ -224,6 +234,9 @@ const Home = () => {
           </div>
         </div>
       </div>
+        <div className="mt-4">
+        <AllReviews></AllReviews>
+        </div>
     </div>
   );
 };

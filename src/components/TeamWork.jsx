@@ -7,22 +7,21 @@ import { Typewriter } from "react-simple-typewriter";
 const TeamWork = ({ team }) => {
   return (
     <div>
-     <Fade direction={"up"}>
-     <div className="card mx-auto glass bg-base-300 max-w-80">
+     <div className="card mx-auto glass bg-opacity-10 dark:bg-opacity-65 bg-[#633aa9] max-w-80">
         <figure>
           <img
-            className="rounded-xl w-full h-[300px]"
+            className="rounded-xl w-full h-[250px]"
             src={team.photo}
             alt="car!"
           />
         </figure>
-        <div className="py-4 *:text-center">
+        <div className="py-4 *:text-white *:text-center">
           <h2 className="text-2xl pb-2 font-bold text-center">
             <Typewriter words={[team.name]} />
           </h2>
-          <p>{team.position}</p>
+          <p className="mb-4">{team.position}</p>
 
-          <div className="card-actions justify-center">
+          <div className="card-actions *:text-[#633aa9] justify-center">
             <Link
               target="_blank"
               to={team.facebook}
@@ -47,7 +46,6 @@ const TeamWork = ({ team }) => {
           </div>
         </div>
       </div>
-     </Fade>
     </div>
   );
 };
