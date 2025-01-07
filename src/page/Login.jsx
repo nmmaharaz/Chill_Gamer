@@ -4,7 +4,7 @@ import google from "../assets/google.png";
 import { AuthContext } from "../authprovider/AuthProvider";
 import {GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import auth from "../components/firebase_int";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Swal from "sweetalert2";
 import { toast } from "react-toastify";
@@ -118,7 +118,14 @@ const Login = () => {
             <img className="w-8" src={google} alt="" />
             <p>Sign in with Google</p> <div></div>
           </button>
+          <p className="text-center">
+            Don't have an account?{" "}
+            <Link to="/registration" className="cursor-pointer text-[#f57f25]">
+              SingUp
+            </Link>
+          </p>
         </form>
+        
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import logo from "../assets/ChillGame.png";
 import { AuthContext } from "../authprovider/AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 const Registration = () => {
   const {SignUp, setUser, UpdateProfile} = useContext(AuthContext)
@@ -115,6 +115,12 @@ const Registration = () => {
           <div className="form-control mt-6">
             <button className="btn text-white bg-[#16234d]">Sign Up</button>
           </div>
+          <p className="text-center">
+            Already have an account?{" "}
+            <Link to="/login" className="cursor-pointer text-[#f57f25]">
+              Login
+            </Link>
+          </p>
         </form>
       </div>
     </div>

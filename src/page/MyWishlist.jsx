@@ -4,6 +4,7 @@ import { MdDelete } from "react-icons/md";
 import StarRatings from "react-star-ratings";
 import Swal from "sweetalert2";
 import { Typewriter } from "react-simple-typewriter";
+import Title from "../components/shered/Title";
 
 const MyWishlist = () => {
   const { user } = useContext(AuthContext);
@@ -36,13 +37,13 @@ const MyWishlist = () => {
   }
 
   return (
-    <div className="">
-      <div className="w-11/12 mx-auto">
-       <div className="divider dark:divider-primary text-3xl my-12 dark:text-white  text-[#2140a9] font-bold">
-          <Typewriter words={["My Wishlist"]} />
+    <div className="dark:bg-white bg-black">
+      <div className="w-10/12 py-36  mx-auto">
+       <div className="mb-4">
+          <Title title={"My Wishlist"}></Title>
         </div>
       <div className="overflow-x-auto">
-        <table className="table">
+        <table className="table  bg-[#141119] shadow-md shadow-gray-700 dark:shadow-gray-400 hover:shadow-[#8750f7] dark:bg-white dark:*:text-black *:text-white rounded-2xl p-5 border-solid border-gray-200">
           {/* head */}
           <thead>
             <tr>
@@ -54,7 +55,7 @@ const MyWishlist = () => {
           </thead>
           <tbody>
             {mywishlist.map((wishlist) => (
-              <tr key={wishlist._id}>
+              <tr className=" bg-[#141119] shadow-md shadow-gray-700 dark:shadow-gray-400 hover:shadow-[#8750f7] dark:bg-white dark:*:text-black *:text-white rounded-2xl p-5 border-solid border-gray-200" key={wishlist._id}>
                 <td>
                   <div className="flex items-center gap-3">
                     <div className="avatar">
