@@ -61,40 +61,42 @@ const Login = () => {
     navigate("/forgetpassword")
   }
   return (
-    <div className="py-36">
-      <div className="card mx-auto bg-blue-50 w-full max-w-sm shrink-0 shadow-2xl">
-        <form onSubmit={handleSignIn} className="card-body">
+    <div className="py-36 dark:bg-white bg-black">
+      <div className="card mx-auto bg-opacity-20 bg-[#633aa9] shadow-md shadow-gray-700 dark:shadow-gray-400 hover:shadow-[#8750f7] w-full max-w-sm shrink-0 ">
+        <form onSubmit={handleSignIn} className="card-body ">
           <div className="mx-auto">
             <img className="w-40 h-full" src={logo} alt="" />
           </div>
-          <p className="text-xl text-center font-semibold text-[#ac52b4]">
+          <p className="text-xl text-center text-white dark:text-gray-600 font-semibold ">
             Sign in to your a account
           </p>
           <div className="form-control">
             <label className="label">
-              <span className="label-text">Email</span>
+              <span className="label-text text-white dark:text-gray-600">Email</span>
             </label>
             <input ref={emailRef}
               type="email"
               placeholder="email"
               name="email"
-              className="input input-bordered"
+              className="input dark:bg-opacity-5 dark:border-base-200 dark:bg-[#633aa9] bg-black dark:text-white text-white
+               input-bordered"
               required
             />
           </div>
           <div className="form-control relative">
             <label className="label">
-              <span className="label-text">Password</span>
+              <span className="label-text text-white dark:text-gray-600">Password</span>
             </label>
             <input 
               type={showPassword?'text':'password'}
               name="password"
               placeholder="password"
-              className="input pr-8 input-bordered"
+              className="input dark:bg-opacity-5 dark:border-base-200 dark:bg-[#633aa9] bg-black dark:text-white text-white
+               pr-8 input-bordered"
               required
             /> 
              <label onClick={handleForgetEmail} className="label cursor-pointer">
-              <a href="#" className="label-text-alt link link-hover">
+              <a href="#" className="label-text-alt text-white dark:text-gray-600 link link-hover">
                 Forgot password?
               </a>
             </label>
@@ -111,14 +113,14 @@ const Login = () => {
             )}
           </div>
           <div className="form-control mt-6">
-            <button className="btn  text-white bg-[#16234d]">Login</button>
+            <button className="dark:bg-opacity-60 cursor-pointer dark:border-base-200 bg-[#7539d8] shadow-md shadow-gray-700 dark:shadow-gray-400 hover:shadow-[#b097e2] text-white font-semibold px-6 py-2 rounded-3xl">Login</button>
           </div>
-          <div className="divider">Or</div>
+          <div className="divider text-white dark:text-gray-600">Or</div>
           <button onClick={handleGoogle} className="btn bg-blue-50 border-solid border-[#435693] flex justify-between items-center">
             <img className="w-8" src={google} alt="" />
-            <p>Sign in with Google</p> <div></div>
+            <p className="text-white dark:text-gray-600">Sign in with Google</p> <div></div>
           </button>
-          <p className="text-center">
+          <p className="text-center text-white dark:text-gray-600">
             Don't have an account?{" "}
             <Link to="/registration" className="cursor-pointer text-[#f57f25]">
               SingUp
