@@ -7,7 +7,7 @@ Server Side Repository https://chill-game-8b0b0.web.app/
 
 ###
 
-<h2 align="left">Features of the Website</h2>
+<h2 align="left">😊Features of the Website</h2>
 
 ###
 
@@ -51,7 +51,7 @@ Server Side Repository https://chill-game-8b0b0.web.app/
 
 ###
 
-<h2 align="left">Dependencies</h2>
+<h2 align="left">🔥Dependencies</h2>
 
 ###
 
@@ -84,7 +84,7 @@ Server Side Repository https://chill-game-8b0b0.web.app/
 
 ###
 
-<h2 align="left">Technologies Used</h2>
+<h2 align="left">👨‍💻Technologies Used</h2>
 
 ###
 
