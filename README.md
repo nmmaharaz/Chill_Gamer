@@ -1,4 +1,4 @@
-Server Side Repository https://chill-game-8b0b0.web.app/
+Server Side Repository https://github.com/nmmaharaz/Chill_Gamer_Sever)
 <h1 align="left">Chill Gamer is a Gaming Review Platform (Client Side)</h1>
 
 ###
