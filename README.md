@@ -63,8 +63,10 @@ Server Side Repository https://chill-game-8b0b0.web.app/
 
 ###
 
-<p align="left">- React for the frontend UI.<br>* Context API to manage the global state for the shopping cart and wishlist.<br>* Tailwind CSS for responsive and stylish UI design.<br>* React Router for handling different routes and dynamic page rendering.<br>* Recharts for displaying product data and statistics.</p>
-
+- React for the frontend UI.<br>* Context API to manage the global state for the shopping cart and wishlist.
+- Tailwind CSS for responsive and stylish UI design.
+- React Router for handling different routes and dynamic page rendering.
+- Recharts for displaying product data and statistics.
 ###
 
 <p align="left"></p>
