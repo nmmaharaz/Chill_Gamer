@@ -55,7 +55,31 @@ Server Side Repository https://chill-game-8b0b0.web.app/
 
 ###
 
-<p align="left">@vitejs/plugin-react: Integration of React with Vite.<br>daisyui: Tailwind CSS components for UI design.<br>eslint: JavaScript linting for better code quality.<br>postcss: Post-processing of CSS files.<br>tailwindcss: Utility-first CSS framework.<br>vite: Fast development server and build tool.<br>date-fns: Modern date utility library.<br>firebase: User authentication and <br>framer-motion: Animations and transitions for React components.<br>localforage: Local storage with IndexedDB and WebSQL support.<br>lottie-react: Easy integration of Lottie animations.<br>lucide-react: Icon library for React.<br>match-sorter: Sort and filter results based on relevance.<br>react: Core library for building user interfaces.<br>react-datepicker: Fully featured date picker for forms.<br>react-hook-form: Simplifies form validation and management.<br>react-hot-toast: Elegant toast notifications.<br>react-icons: Popular icons for React projects.<br>react-router-dom: Declarative routing and navigation.<br>react-responsive: Allows dynamic adjustments based on screen size.<br>sort-by: Helper for sorting arrays by property.<br>sweetalert2: Beautiful and customizable alerts.<br>swiper: Responsive sliders and carousels.<br>tailwind-merge: Utility for merging Tailwind CSS classes.<br>tailwindcss-animate: Ready-to-use animation utilities for Tailwind CSS.</p>
+- @vitejs/plugin-react: Integration of React with Vite.
+- daisyui: Tailwind CSS components for UI design.
+- eslint: JavaScript linting for better code quality.
+- postcss: Post-processing of CSS files.
+- tailwindcss: Utility-first CSS framework.
+- vite: Fast development server and build tool.
+- date-fns: Modern date utility library.
+- firebase: User authentication and
+- framer-motion: Animations and transitions for React components.
+- localforage: Local storage with IndexedDB and WebSQL support.
+- lottie-react: Easy integration of Lottie animations.
+- lucide-react: Icon library for React.<br>match-sorter: Sort and
+- filter results based on relevance.
+- react: Core library for building user interfaces.
+- react-datepicker: Fully featured date picker for forms.
+- react-hook-form: Simplifies form validation and management.
+- react-hot-toast: Elegant toast notifications.
+- react-icons: Popular icons for React projects.
+- react-router-dom: Declarative routing and navigation.
+- react-responsive: Allows dynamic adjustments based on screen size.
+- sort-by: Helper for sorting arrays by property.
+- sweetalert2: Beautiful and customizable alerts.
+- swiper: Responsive sliders and carousels.
+- tailwind-merge: Utility for merging Tailwind CSS classes.
+- tailwindcss-animate: Ready-to-use animation utilities for Tailwind CSS.</p>
 
 ###
 
@@ -63,7 +87,8 @@ Server Side Repository https://chill-game-8b0b0.web.app/
 
 ###
 
-- React for the frontend UI.<br>* Context API to manage the global state for the shopping cart and wishlist.
+- React for the frontend UI.
+- Context API to manage the global state for the shopping cart and wishlist.
 - Tailwind CSS for responsive and stylish UI design.
 - React Router for handling different routes and dynamic page rendering.
 - Recharts for displaying product data and statistics.
