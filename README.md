@@ -66,7 +66,8 @@ Server Side Repository https://chill-game-8b0b0.web.app/
 - framer-motion: Animations and transitions for React components.
 - localforage: Local storage with IndexedDB and WebSQL support.
 - lottie-react: Easy integration of Lottie animations.
-- lucide-react: Icon library for React.<br>match-sorter: Sort and
+- lucide-react: Icon library for React.
+- match-sorter: Sort and
 - filter results based on relevance.
 - react: Core library for building user interfaces.
 - react-datepicker: Fully featured date picker for forms.
