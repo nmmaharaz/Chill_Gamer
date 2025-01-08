@@ -96,7 +96,7 @@ Server Side Repository https://chill-game-8b0b0.web.app/
 ###
 
 <p align="left"></p>
-##
+
 ## Projeact Installation
 ```bash
 git clone https://github.com/nmmaharaz/Chill_Gamer.git
