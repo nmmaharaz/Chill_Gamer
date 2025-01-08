@@ -99,6 +99,6 @@ Server Side Repository https://chill-game-8b0b0.web.app/
 
 ###
 
-<p align="left">https://chill-game-8b0b0.web.app/</p>
+<p align="left">🔗 https://chill-game-8b0b0.web.app/</p>
 
 ###
