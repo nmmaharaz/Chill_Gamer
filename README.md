@@ -78,6 +78,8 @@ Follow these steps to set up and run Chill_Gamer locally:
 ```sh
 https://github.com/nmmaharaz/Chill_Gamer.git
 
+```sh
+
 ### 2. Live Side:
 live 
 🔗 https://chill-game-8b0b0.web.app/</p>
