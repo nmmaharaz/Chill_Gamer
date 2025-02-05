@@ -81,6 +81,3 @@ cd Chill_Gamer
 2️⃣ Live Link
 ```sh
 https://chill-game-8b0b0.web.app/
-
-
-
