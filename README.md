@@ -78,3 +78,31 @@ Run the following command in your terminal:
 git clone https://github.com/nmmaharaz/Chill_Gamer.git
 
 cd Chill_Gamer
+
+he
+
+# Project Name
+
+## Introduction
+Briefly describe your project and its purpose.
+
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Features](#features)
+- [Configuration](#configuration)
+- [Dependencies](#dependencies)
+- [Examples](#examples)
+- [Troubleshooting](#troubleshooting)
+- [Contributors](#contributors)
+- [License](#license)
+
+## Installation
+
+### 1. Install via Package Manager  
+For systems that support a package manager, use:  
+
+#### **For Node.js (npm):**  
+```sh
+npm install <package-name>
+
