@@ -76,10 +76,10 @@ Follow these steps to set up and run Chill_Gamer locally:
 
 ### 1. Clone the Repository  
 ```sh
-git clone https://github.com/nmmaharaz/Chill_Gamer.git
+https://github.com/nmmaharaz/Chill_Gamer.git
 
-###
-
-<p align="left">🔗 https://chill-game-8b0b0.web.app/</p>
+### 2. Live Side:
+live 
+🔗 https://chill-game-8b0b0.web.app/</p>
 
 ###
