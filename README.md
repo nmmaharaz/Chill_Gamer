@@ -77,7 +77,3 @@ Follow these steps to set up and run Chill_Gamer locally:
 ### 1. Clone the Repository  
 ```sh
 https://github.com/nmmaharaz/Chill_Gamer.git
-
-
-
-
