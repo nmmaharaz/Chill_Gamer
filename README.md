@@ -77,6 +77,9 @@ Run the following command in your terminal:
 ```sh
 git clone https://github.com/nmmaharaz/Chill_Gamer.git
 cd Chill_Gamer
+```
+2️⃣ Live Link
+```sh
 https://chill-game-8b0b0.web.app/
 
 
