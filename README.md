@@ -78,4 +78,3 @@ Run the following command in your terminal:
 git clone https://github.com/nmmaharaz/Chill_Gamer.git
 
 cd Chill_Gamer
-
