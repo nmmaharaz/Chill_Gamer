@@ -74,6 +74,11 @@ Chill_Gamer is built using modern libraries and tools to ensure a seamless exper
 
 Follow these steps to set up and run Chill_Gamer locally:  
 
-### 1. Clone the Repository  
+## 🚀 Installation
+
+Follow these steps to set up and run **Chill_Gamer** locally:  
+
+### 1️⃣ Clone the Repository  
+Run the following command in your terminal:  
 ```sh
-https://github.com/nmmaharaz/Chill_Gamer.git
+git clone https://github.com/nmmaharaz/Chill_Gamer.git
